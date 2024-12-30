@@ -1,0 +1,2 @@
+qpdf --rotate=+270:298,300,318,329,552,582,688,799,894,896,899,900,901 Richard_Stevens-TCP-IP_Illustrated-EN.pdf TCP-IP_Illustrated-EN.pdf
+qpdf TCP-IP_Illustrated-EN.pdf --pages . 1-1058 -- TCP-IP_Illustrated.pdf
