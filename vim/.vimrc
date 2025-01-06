@@ -1,3 +1,8 @@
+" File              : .vimrc
+" Author            : guochuliang <2797366715@qq.com>
+" Date              : 01.10.2023
+" Last Modified Date: 07.02.2024
+" Last Modified By  : guochuliang <2797366715@qq.com>
 " use python3
 if exists('py2') && has('python')
 elseif has('python3')
@@ -59,12 +64,16 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'dpelle/vim-languagetool'
 
 Plug 'wesleyche/srcexpl'
-Plug 'pboettch/vim-cmake-syntax'
 Plug 'rootkiter/vim-hexedit'
 
+Plug 'ahonn/vim-fileheader'
+
 Plug 'voldikss/vim-floaterm'
+Plug 'skywind3000/vim-quickui'
 
 Plug 'skanehira/k8s.vim'
+" Plug 'davidhalter/jedi-vim'
+" Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 Plug 'gelguy/wilder.nvim'
 "Plug 'wincent/command-t'
@@ -95,6 +104,7 @@ Plug 'wilsaj/chuck.vim'
 Plug 'thecodesmith/vim-groovy'
 Plug 'tfnico/vim-gradle'
 Plug 'vhdirk/vim-cmake'
+Plug 'pboettch/vim-cmake-syntax'
 Plug 'euclidianace/betterlua.vim'
 Plug 'kelwin/vim-smali'
 Plug 'tbastos/vim-lua'
@@ -238,8 +248,13 @@ set confirm
 set autowrite
 
 " backup
+set undofile
 set undodir=~/.vim/tmp/undo//
+
+set backup
 set backupdir=~/.vim/tmp/backup//
+
+set swapfile
 set directory=~/.vim/tmp/swap//
 
 " make directories automatically if they don't already exist
