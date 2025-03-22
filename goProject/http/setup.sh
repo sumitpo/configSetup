@@ -1,0 +1,13 @@
+mkdir configs
+mkdir docs
+mkdir global
+mkdir internal
+mkdir internal/dao
+mkdir internal/middleware
+mkdir internal/model
+mkdir internal/routers
+mkdir internal/services
+mkdir pkg
+mkdir storage
+mkdir scripts
+mkdir third_party

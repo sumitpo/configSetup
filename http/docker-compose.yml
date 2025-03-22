@@ -1,0 +1,65 @@
+services:
+  fib1:
+    build:
+      context: ./fib1
+      dockerfile: Dockerfile
+    deploy:
+      mode: replicated
+      replicas: 3
+      resources:
+        limits:
+          cpus: '0.0625'
+          memory: 50M
+    environment:
+      - GIN_MODE=release
+    stdin_open: true
+    tty: true
+    restart: always
+    hostname: fib1
+    logging:
+      driver: "json-file"
+    networks:
+      - custom_network
+
+  fib2:
+    build:
+      context: ./fib2
+      dockerfile: Dockerfile
+    deploy:
+      mode: replicated
+      replicas: 3
+      resources:
+        limits:
+          cpus: '0.0625'
+          memory: 50M
+    environment:
+      - GIN_MODE=release
+    stdin_open: true
+    tty: true
+    restart: always
+    hostname: fib2
+    logging:
+      driver: "json-file"
+    networks:
+      - custom_network
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - fib1
+      - fib2
+    networks:
+      - custom_network
+
+networks:
+  custom_network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: "172.28.0.0/28"  # Set the CIDR block here
