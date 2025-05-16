@@ -3,6 +3,9 @@ cmake_minimum_required(VERSION 3.10)
 # Project name
 project(MyProject)
 
+set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install")
+# CACHE PATH "${CMAKE_SOURCE_DIR}/targets")
+
 # Enable testing
 enable_testing()
 
@@ -18,10 +21,17 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 # Add your test source files
-add_executable(MyTests test.cpp)
+add_executable(MyTests test.cpp single.cc)
 
 # Link Google Test to your tests
 target_link_libraries(MyTests gtest gtest_main)
 
+
 # Optionally, add a test to CTest
 add_test(NAME MyTest COMMAND MyTests)
+
+# Install the executable
+install(TARGETS MyTests DESTINATION bin)
+
+# Install the headers (if applicable)
+# install(DIRECTORY include/ DESTINATION include)
