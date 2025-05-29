@@ -1,3 +1,0 @@
-#include <thread>
-
-void consume(
