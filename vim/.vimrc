@@ -80,6 +80,21 @@ Plug 'tbastos/vim-lua'
 Plug 'google/vim-searchindex'
 Plug 'ambv/black'
 Plug 'vim-perl/vim-perl', { 'for': 'perl' }
+" Plug 'sumitpo/hurl.vim'
+
+Plug 'wilsaj/chuck.vim'
+Plug 'thecodesmith/vim-groovy'
+Plug 'tfnico/vim-gradle'
+Plug 'vhdirk/vim-cmake'
+Plug 'pboettch/vim-cmake-syntax'
+Plug 'euclidianace/betterlua.vim'
+Plug 'kelwin/vim-smali'
+Plug 'tbastos/vim-lua'
+Plug 'mattn/perl-completion.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'drmikehenry/vim-headerguard'
+Plug 'ravishi/vim-gnu-c'
+Plug 'vim-scripts/nginx.vim'
 
 " Performance profile
 Plug 'tweekmonster/startuptime.vim'
@@ -310,6 +325,10 @@ endfunction
 
 function! s:setup_perl()
   if !g:enable_lang_perl | return | endif
+endfunction
+
+function! s:setup_hurl()
+  if !g:enable_lang_hurl | return | endif
 endfunction
 
 " =============================================================================
